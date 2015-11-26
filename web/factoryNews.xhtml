@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Factory News</title>
+        <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <h:outputStylesheet library="css" name="bootstrap.min.css" />
     </h:head>
-
     <div class="">
         <div class="jumbotron">
             <!-- Header Navigation -->
@@ -23,7 +24,6 @@
                         </button>
                         <a class="navbar-brand" href="#page-top">Admin Panel</a>
                     </div>
-
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
@@ -31,11 +31,11 @@
                                 <a href="#page-top"></a>
                             </li>
                             <li class="page-scroll">
-                                <a href="#portfolio">Current News</a>
+                                <h:link value="Current News" outcome="home" />
                             </li>
-                            <!--                            <li class="page-scroll">
-                                                            <a href="#about">Create New</a>
-                                                        </li>-->
+<!--                            <li class="page-scroll">
+                                <a href="#about">Create New</a>
+                            </li>-->
                             <!--                    <li class="page-scroll">
                                                     <a href="#contact">Contact</a>
                                                 </li>-->
@@ -48,34 +48,49 @@
         </div>
     </div>
     <body>
-        <!--        <h:form>
-                    <div class="container">
-                        <div class="row"></div>
-                        <div class="">
-                          
-                            
-                            
-                            
+        <h:form enctype="multipart/form-data">
+            <div class="container">
+                <!--<div class="row"></div>-->
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 jumbotron"> 
+                            <h4 class="control-label"><strong>Titulo</strong></h4>
+                            <h:inputText class="form-control" />
+                            <h4 class="control-label"><strong>Imagen</strong></h4>
+                            <!--                            <p:fileUpload fileUploadListener="{fileUploadControl.handleFileUpload}"
+                                                                      mode="advanced"
+                                                                      update="messages"
+                                                                      auto="true"
+                                                                      sizeLimit="100000" 
+                                                                      allowTypes="/(\.|\/)(gif|jpg|png)$/"/>
+                                                        <p:growl id="messages" showDetail="true"/>-->
+                            <h:inputFile></h:inputFile>
+                            <h4 class="control-label"><strong>Descripcion</strong></h4>
+                            <h:inputTextarea class="form-control" rows="3"></h:inputTextarea>
+                        </div>
+                        <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 jumbotron">
+                            <h4 class="control-label"><strong>Video</strong></h4>
+                            <h:inputText class="form-control" />
+                            <h4 class="control-label"><strong>Estado</strong></h4>
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <p:selectOneRadio id="console" class="" value="1">
+                                    <f:selectItem itemLabel="Activo" itemValue="1" />
+                                    <f:selectItem itemLabel="Inactivo" itemValue="0" />
+                                </p:selectOneRadio>
+                            </h:panelGrid>
+                            <h4 class="control-label"><strong>Genero</strong></h4>
+                            <p:selectOneListbox id="basic" value="">
+                                <f:selectItem itemLabel="Option 1" itemValue="1" />
+                                <f:selectItem itemLabel="Option 2" itemValue="2" />
+                                <f:selectItem itemLabel="Option 3" itemValue="3" />
+                            </p:selectOneListbox>
                         </div>
                     </div>
-                </h:form>-->
-
-        <h:form >
-            <div class="container">
-
-
-
-                    <h4 for="inputPassword" class="col-lg-2 control-label"><strong>Titulo</strong></h4>
-                    <h:inputText class="form-control" />
-
-                    <h4 for="inputPassword" class="col-lg-2 control-label"><strong>Titulo</strong></h4>
-                    <h:inputText class="form-control" />
-
-
-            </div>    
+                </div>
+            </div>
         </h:form>
-
         <h:outputScript library="js" name="jquery.js" />
         <h:outputScript library="js" name="bootstrap.min.js" />
     </body>
 </html>
+
