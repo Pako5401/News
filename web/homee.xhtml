@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Admin</title>
+            </f:facet>
+        </h:head>
+  <h:body>
+      <h:form id="form">
+          <h3>Imagen de la noticia</h3>
+    <p:fileUpload fileUploadListener="#{fileUploadController.upload}" mode="advanced" dragDropSupport="false"
+           update="messages" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+    <p:growl id="messages" showDetail="true" />
+    
+    <h3>T&iacute;tulo de la noticia</h3>
+    <p:inputText />
+    
+    <h3>Descripci&oacute;n de la noticia</h3>
+    <p:inputTextarea rows="6" cols="33" />
+    
+    <h3 style="margin-top:0">Estado de la noticia</h3>
+    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+        <p:outputLabel for="console" value="Activo:" />
+        <p:selectOneRadio id="console" value="#{fileUploadController.console}">
+            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+        </p:selectOneRadio>
+    </h:panelGrid>
+    
+    <h3>G&eacute;nero de la noticia</h3>
+    
+    <p:outputLabel for="basic" value="Basic:" />
+        <p:selectOneListbox id="basic" value="#{selectOneView.option}">
+            <f:selectItem itemLabel="Option 1" itemValue="1" />
+            <f:selectItem itemLabel="Option 2" itemValue="2" />
+            <f:selectItem itemLabel="Option 3" itemValue="3" />
+        </p:selectOneListbox>
+    
+    <h:outputLink value="My/Fuckin/Liga.xhtml" class="portfolio-link" rel="rel" type="type" >
+	Fuckin Liga
+</h:outputLink>
+</h:form>
+        </h:body>
+    </f:view>
+</html>
