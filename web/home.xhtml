@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
-        <title>TODO supply a title</title>
+        <title>Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <h:outputStylesheet library="css" name="bootstrap.min.css" />
     </h:head>
@@ -30,9 +31,9 @@
                             <li class="hidden">
                                 <a href="#page-top"></a>
                             </li>
-<!--                            <li class="page-scroll">
-                                <a href="#portfolio">Current News</a>
-                            </li>-->
+                            <!--                            <li class="page-scroll">
+                                                            <a href="#portfolio">Current News</a>
+                                                        </li>-->
                             <li class="page-scroll">
                                 <h:link value="Create New" outcome="factoryNews" />
                             </li>
@@ -52,228 +53,48 @@
             <div class="container">
                 <!--<div class="row"></div>-->
                 <div class="">
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Imagen</th>
-                                <th>Titulo</th>
-                                <th>Fecha de creación</th>
-                                <th>Estado</th>
-                                <th>Genero</th>
-                                <th>Video</th>
-                                <th>Editar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Peter</td>
-                                <td>Parker</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>John</td>
-                                <td>Rambo</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
 
-                            <tr>
-                                <td>4</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Peter</td>
-                                <td>Parker</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>John</td>
-                                <td>Rambo</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
 
-                            <tr>
-                                <td>7</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>Peter</td>
-                                <td>Parker</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>John</td>
-                                <td>Rambo</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
+                    <h:dataTable value="#{ctrlNews.noticias}" var="notas" 
+                                 captionStyle=""
+                                 styleClass="table table-bordered table-hover">
+                        <f:facet name="caption">NOTICIAS</f:facet>
 
-                            <tr>
-                                <td>10</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td>Peter</td>
-                                <td>Parker</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>John</td>
-                                <td>Rambo</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
+                        <h:column headerClass="columnHeader">
+                            <f:facet name="header">#</f:facet>
+                                #{notas.idComponente}
+                        </h:column>
+                        <h:column headerClass="columnHeader">
+                            <f:facet name="header">Imagen</f:facet>
+                            <h:graphicImage class="img-responsive" width="120" height="140"  value="resources/img/portfolio/#{notas.aliasImg}" />
+                        </h:column>
+                        <h:column headerClass="columnHeader">
+                            <f:facet name="header">Titulo</f:facet>
+                                #{notas.titulo}
+                        </h:column>
+                        <h:column headerClass="columnHeader">
+                            <f:facet name="header">Fecha de creacion</f:facet>
+                                #{notas.fecha}
+                        </h:column>
+                        <h:column headerClass="columnHeader">
+                            <f:facet name="header">Estado</f:facet>
+                                #{notas.estatus}
+                        </h:column>
+                        <h:column headerClass="columnHeader">
+                            <f:facet name="header">Genero</f:facet>
+                                #{notas.genero}
+                        </h:column>
+                        <h:column headerClass="columnHeader">
+                            <f:facet name="header">Video</f:facet>
+                                #{notas.urlVideo}
+                        </h:column>
+                        <h:column headerClass="columnHeader">
+                            <f:facet name="header">Editar</f:facet>
+                            <h:commandButton value="Editar" class="btn btn-default btn-block"/>
+                        </h:column>
 
-                            <tr>
-                                <td>13</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>14</td>
-                                <td>Peter</td>
-                                <td>Parker</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>15</td>
-                                <td>John</td>
-                                <td>Rambo</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
 
-                            <tr>
-                                <td>16</td>
-                                <td>Peter</td>
-                                <td>Parker</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>17</td>
-                                <td>John</td>
-                                <td>Rambo</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-
-                            <tr>
-                                <td>18</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>19</td>
-                                <td>Peter</td>
-                                <td>Parker</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                                <td>John</td>
-                                <td>Rambo</td>
-                                <td>25 - Nov - 2015</td>
-                                <td>Rocky</td>
-                                <td>Balboa</td>
-                                <td>Rocky</td>
-                                <td><h:commandButton value="Editar" class="btn btn-default btn-block"/></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    </h:dataTable>
                 </div>
             </div>
         </h:form>

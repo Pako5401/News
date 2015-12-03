@@ -1,36 +1,20 @@
 package com.mx.back.news.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * @author Fco Juárez
  */
-public class HomeBean {
+public class CreateBean {
 
-    private int idComponente;
-    private int estatus;
     private String titulo;
+    private String usuario;
     private String aliasImg;
     private String descComponente;
+    private int estatus;
     private String genero;
     private String urlVideo;
     private Date fecha;
-
-    public int getIdComponente() {
-        return idComponente;
-    }
-
-    public void setIdComponente(int idComponente) {
-        this.idComponente = idComponente;
-    }
-
-    public int getEstatus() {
-        return estatus;
-    }
-
-    public void setEstatus(int estatus) {
-        this.estatus = estatus;
-    }
 
     public String getTitulo() {
         return titulo;
@@ -38,6 +22,14 @@ public class HomeBean {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getAliasImg() {
@@ -54,6 +46,14 @@ public class HomeBean {
 
     public void setDescComponente(String descComponente) {
         this.descComponente = descComponente;
+    }
+
+    public int getEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(int estatus) {
+        this.estatus = estatus;
     }
 
     public String getGenero() {
