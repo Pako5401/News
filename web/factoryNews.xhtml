@@ -2,8 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -56,31 +55,35 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12"> 
                             <h4 class="control-label"><strong>Titulo</strong></h4>
-                            <h:inputText class="form-control" value="#{ctrlNews.titulo}"/>
+                            <h:inputText id="title" class="form-control" value="#{ctrlNews.titulo}" required="true" requiredMessage="Campo requerido!">
+                                <f:validateLength minimum="1" maximum="30"/><f:ajax event="keyup"></f:ajax>
+                            </h:inputText><h:message id="ide" for="title" style="color:red" />
+
                             <h4 class="control-label"><strong>Imagen</strong></h4>
-                            <h:inputFile class="filestyle" value="#{ctrlNews.archivo}"/>
+                            <h:inputFile class="filestyle" value="#{ctrlNews.archivo}" required="true">
+                            </h:inputFile>
                             <h4 class="control-label"><strong>Video</strong></h4>
                             <h:inputText class="form-control" value="#{ctrlNews.urlVideo}"/>
                         </div>
                         <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
                             <h4 class="control-label"><strong>Estado</strong></h4>
-                            <h:selectOneRadio id="console" class="radioBtn" value="#{ctrlNews.estatus}">
+                            <h:selectOneRadio id="console" class="radioBtn" value="#{ctrlNews.estatus}" required="true">
                                 <f:selectItem itemLabel="Activo" itemValue="1"  />
                                 <f:selectItem itemLabel="Inactivo" itemValue="0" />
                             </h:selectOneRadio>
                             <h4 class="control-label"><strong>Genero</strong></h4>
-                            <h:selectOneMenu  id="basic" value="#{ctrlNews.genero}" class="form-control">
+                            <h:selectOneMenu  id="basic" value="#{ctrlNews.genero}" class="form-control" required="true">
                                 <f:selectItem itemLabel="Rock" itemValue="rock" />
                                 <f:selectItem itemLabel="Punk" itemValue="punk" />
                                 <f:selectItem itemLabel="Metal" itemValue="metal" />
                             </h:selectOneMenu>
                             <h4 class="control-label"><strong>Descripcion</strong></h4>
-                            <h:inputTextarea class="form-control" value="#{ctrlNews.descComponente}"></h:inputTextarea>
+                            <h:inputTextarea class="form-control" value="#{ctrlNews.descComponente}" required="true"></h:inputTextarea>
+                            <h:commandButton  type="submit" value="Crear!" class="btn btn-danger btn-lg" action="#{ctrlNews.creaNoticia()}"/>
                         </div>
                     </div>
                 </div>
             </div>
-            <h:commandButton type="submit" value="Sign in!" class="btn btn-danger btn-block btn-lg" action="#{ctrlNews.creaNoticia()}"/>
         </h:form>
         <h:outputScript library="js" name="jquery.js" />
         <h:outputScript library="js" name="bootstrap.min.js" />

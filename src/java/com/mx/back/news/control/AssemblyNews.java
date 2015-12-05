@@ -40,6 +40,7 @@ public class AssemblyNews implements Serializable {
     private String usuario = "";
     private String contrasenia = "";
     private List<HomeBean> laNota = null;
+    private List<HomeBean> laNotaHome = null;
     private List<HomeBean> noticias = null;
     CreateBean nuevaNota = null;
     Part archivo = null;
@@ -72,9 +73,21 @@ public class AssemblyNews implements Serializable {
         if (laNota == null) {
             laNota = new ArrayList<HomeBean>();
             ad = new AssemblyDao();
-            laNota = ad.muestraNoticias();
+            int num = 1;
+            laNota = ad.muestraNoticias(num);
         }
         return laNota;
+    }
+    
+    public List<HomeBean> getNoticiasHome(){
+        System.out.println("Execute laNotaHome");
+        if(laNotaHome==null){
+        laNotaHome = new ArrayList<HomeBean>();
+            ad = new AssemblyDao();
+            int num = 2;
+            laNotaHome = ad.muestraNoticias(num);
+        }
+        return laNotaHome;
     }
 
     public String creaNoticia() {
@@ -114,7 +127,27 @@ public class AssemblyNews implements Serializable {
             System.out.println("MSM----No se copio el archivo¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
         }
     }
-
+    
+    public String editaNoticia(HomeBean datos){
+        System.out.println("Execute editaNoticia");
+        
+//    titulo
+//    archivo
+//    urlVideo
+//    estatus
+//    genero
+//    descComponente
+        setTitulo(datos.getTitulo());
+//        setArchivo(datos.getAliasImg());
+        setUrlVideo(datos.getUrlVideo());
+        setEstatus(datos.getEstatus());
+        setGenero(datos.getGenero());
+        setDescComponente(datos.getDescComponente());
+//        ad = new AssemblyDao();
+//        ad.editaNota(datos);
+        return "factoryNews";
+    }
+    
     public String getUsuario() {
         return usuario;
     }
@@ -187,5 +220,7 @@ public class AssemblyNews implements Serializable {
     public void setArchivo(Part archivo) {
         this.archivo = archivo;
     }
+    
+    
 
 }

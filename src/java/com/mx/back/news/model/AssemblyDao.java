@@ -40,12 +40,18 @@ public class AssemblyDao {
         return loginBean;
     }
 
-    public ArrayList muestraNoticias() {
+    public ArrayList muestraNoticias(int num) {
         System.out.println("Execute muestraNoticias()");
         try {
             homeArray = new ArrayList<HomeBean>();
             con = new Conexion();
+            if(num==1){
+                System.out.println("NUM1 ="+num);
             con.ps = con.conexion.prepareStatement("SELECT id_componente, titulo, estatus, alias_img, desc_componente, genero, url_video,fecha FROM componentes WHERE estatus=1");
+            } else {
+                System.out.println("NUM2 ="+num);
+            con.ps = con.conexion.prepareStatement("SELECT id_componente, titulo, estatus, alias_img, desc_componente, genero, url_video,fecha FROM componentes");
+            }
             rs = con.ps.executeQuery();
             while (rs.next()) {
                 noticias = new HomeBean();
@@ -81,4 +87,16 @@ public class AssemblyDao {
         }
         return flag;
     }
+    
+    public void editaNota(HomeBean item){
+        System.out.println("Execute editaNota");
+        try{
+        con = new Conexion();
+         sentencia = con.conexion.createStatement();
+            sentencia.executeUpdate("UPDATE componentes SET titulo='"+item.getTitulo()+"', estatus='"+item.getEstatus()+"', alias_img='"+item.getAliasImg()+"', desc_componente='"+item.getDescComponente()+"', genero`='"+item.getGenero()+"', url_video='"+item.getUrlVideo()+"' WHERE id_componente="+item.getIdComponente()+"");
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+    
 }

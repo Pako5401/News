@@ -55,7 +55,7 @@
                 <div class="">
 
 
-                    <h:dataTable value="#{ctrlNews.noticias}" var="notas" 
+                    <h:dataTable value="#{ctrlNews.noticiasHome}" var="notas" 
                                  captionStyle=""
                                  styleClass="table table-bordered table-hover">
                         <f:facet name="caption">NOTICIAS</f:facet>
@@ -90,9 +90,8 @@
                         </h:column>
                         <h:column headerClass="columnHeader">
                             <f:facet name="header">Editar</f:facet>
-                            <h:commandButton value="Editar" class="btn btn-default btn-block"/>
+                            <h:commandButton value="Editar" class="btn btn-default btn-block" action="#{ctrlNews.editaNoticia(notas)}"/>
                         </h:column>
-
 
                     </h:dataTable>
                 </div>
