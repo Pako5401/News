@@ -51,7 +51,7 @@
         <h:form enctype="multipart/form-data">
             <div class="container">
                 <!--<div class="row"></div>-->
-                <div class="jumbotron">
+                <div class="">
                     <div class="row">
                         <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12"> 
                             <h4 class="control-label"><strong>Titulo</strong></h4>
@@ -79,7 +79,8 @@
                             </h:selectOneMenu>
                             <h4 class="control-label"><strong>Descripcion</strong></h4>
                             <h:inputTextarea class="form-control" value="#{ctrlNews.descComponente}" required="true"></h:inputTextarea>
-                            <h:commandButton  type="submit" value="Crear!" class="btn btn-danger btn-lg" action="#{ctrlNews.creaNoticia()}"/>
+                            <br></br>
+                            <h:commandButton  type="submit" value="Crear!" class="btn btn-primary pull-right" action="#{ctrlNews.creaNoticia()}"/>
                         </div>
                     </div>
                 </div>
