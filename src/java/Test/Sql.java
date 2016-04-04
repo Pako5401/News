@@ -49,3 +49,61 @@ public class Sql {
     Select id_componente, titulo, usuario, estatus, alias_img, desc_componente, genero, url_video,fecha from componentes where estatus=1;
     */
 }
+
+Api Rest
+https://www.youtube.com/watch?v=Z6FH1vGn94k
+
+Valida json
+http://jsonlint.com/
+
+Curso sql server
+https://www.youtube.com/watch?v=HEkfvk2PBCs
+
+{
+	"usuarios": [{
+		"id": 1,
+		"nombre": "Luis",
+		"apellido": "Juarez",
+		"telefono": "5518916630",
+		"direccion": "Arandas 292 Nezahualcoyotl"
+	}, {
+		"id": 2,
+		"nombre": "Pedro",
+		"apellido": "Velasquez",
+		"telefono": "559999999",
+		"direccion": "Tulipan 355 Chicoloapan"
+	}, {
+		"id": 3,
+		"nombre": "Pepe",
+		"apellido": "Lopez",
+		"telefono": 8888888888,
+		"direccion": "Rosas 288 Ecatepec"
+	}, {
+		"id": 11
+	}],
+	"sexo": [{
+		"id": 1,
+		"sexo": "Hombre"
+	}, {}]
+}
+
+======================================
+Descargar Node js
+https://www.microsoft.com/es-mx/download/details.aspx?id=30438
+
+Comando
+node --version
+npm --version
+node
+console.log("Wii")
+
+Instalar json-server con npm
+npm install -g json-server
+
+Arrancas el servidor del API
+json-server --watch db.json
+=======================================
+
+
+Sql Server 2008 download
+https://www.microsoft.com/es-ES/download/details.aspx?id=1842
